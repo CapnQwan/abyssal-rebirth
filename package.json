@@ -12,12 +12,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CapnQwan/cult-frog-abyssal-rebirth.git"
+    "url": "git+https://github.com/CapnQwan/abyssal-rebirth.git"
   },
   "bugs": {
-    "url": "https://github.com/CapnQwan/cult-frog-abyssal-rebirth/issues"
+    "url": "https://github.com/CapnQwan/abyssal-rebirth/issues"
   },
-  "homepage": "https://github.com/CapnQwan/cult-frog-abyssal-rebirth#readme",
+  "homepage": "https://github.com/CapnQwan/abyssal-rebirth#readme",
   "type": "module",
   "sideEffects": false,
   "files": [
