@@ -1,0 +1,16 @@
+{
+  "extends": "@cult-frog/tooling/tsconfig/base.json",
+  "compilerOptions": {
+    "target": "ES2024",
+    "lib": ["ES2024"],
+    "customConditions": ["@abyssal-rebirth/source"],
+    "composite": true,
+    "noEmit": false,
+    "declarationMap": true,
+    "sourceMap": true,
+    "stripInternal": true,
+    "rootDir": "${configDir}/src",
+    "outDir": "${configDir}/dist",
+    "tsBuildInfoFile": "${configDir}/dist/.tsbuildinfo"
+  }
+}

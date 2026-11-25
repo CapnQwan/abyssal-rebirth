@@ -8,10 +8,8 @@ node_modules/
 # Build outputs
 # =========================
 dist/
-build/
-out/
-coverage/
-packages/engine/docs/
+/build/
+/out/
 *.tsbuildinfo
 
 # =========================
@@ -19,10 +17,6 @@ packages/engine/docs/
 # =========================
 logs/
 *.log
-npm-debug.log*
-pnpm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # =========================
 # Environment files
@@ -47,19 +41,12 @@ Thumbs.db
 !.vscode/launch.json
 !.vscode/tasks.json
 .idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
 
 # =========================
 # Vite / modern bundlers
 # =========================
 .vite/
 .cache/
-.parcel-cache/
-.turbo/
-.swc/
 
 # =========================
 # Game engine / graphics artifacts
@@ -76,15 +63,7 @@ shaders/cache/
 # runtime-generated assets (if you stream or bake assets)
 runtime-assets/
 generated-assets/
-baked/
-
-# =========================
-# Web assets (optional depending on workflow)
-# =========================
-# If you compile assets (textures/audio/etc)
-*.atlas
-*.basis
-*.ktx2
+/baked/
 
 # =========================
 # Monorepo (pnpm)
@@ -92,30 +71,12 @@ baked/
 .pnpm-debug.log*
 
 # =========================
-# Testing
-# =========================
-jest-cache/
-vitest-cache/
-
-# =========================
 # Coverage
 # =========================
 coverage/
 
 # =========================
-# Misc tooling
-# =========================
-.eslintcache
-.prettiercache
-
-# =========================
-# Pre commit hooks
-# =========================
-.pre-commit-config.yaml
-.pre-commit-config.yaml
-
-# =========================
 # Optional: local tooling state
 # =========================
 .tmp/
-temp/
+/temp/

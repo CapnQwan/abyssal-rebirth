@@ -19,8 +19,5 @@
 
   "files.eol": "\n",
 
-  "prettier.enable": false,
-  "eslint.enable": false,
-
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.experimental.useTsgo": true
 }

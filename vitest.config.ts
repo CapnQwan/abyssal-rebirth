@@ -1,3 +1,5 @@
-import { baseVitestConfig } from '@cult-frog/tooling/vitest/base';
+import { defineConfig } from 'vitest/config';
 
-export default baseVitestConfig({ aliasName: '@cult-frog/abyssal-rebirth' })
+export default defineConfig({
+  test: { projects: ['packages/*/vitest.config.ts'] },
+});

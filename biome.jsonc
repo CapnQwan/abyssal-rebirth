@@ -1,1 +1,72 @@
-{ "extends": ["@cult-frog/tooling/biome/base"] }
+{
+  "extends": ["@cult-frog/tooling/biome/base"],
+  "linter": {
+    "rules": {
+      "style": {
+        // Repo-wide: forces `fs` → `node:fs`, so the node:* ban below can't be dodged.
+        "useNodejsImportProtocol": "error"
+      }
+    }
+  },
+  "overrides": [
+    {
+      /**
+       * @todo - once the actual adapters are starting to be worked on, refine this so it's
+       * more specific. As with this currently something like a headless adapter would be
+       * able to access platform code. So this should be refined as we go.
+       */
+      "includes": ["packages/**/src/**", "!packages/adapters/**"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noPrivateImports": "error"
+          },
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "paths": {
+                  "@webgpu/types": "Platform types belong in adapters."
+                },
+                "patterns": [
+                  {
+                    "group": ["node:*"],
+                    "message": "Node APIs are platform code; access them through an adapter."
+                  },
+                  {
+                    "group": ["**/adapters/**"],
+                    "message": "Only adapters may depend on platform code."
+                  }
+                ]
+              }
+            },
+            "noRestrictedGlobals": {
+              "level": "error",
+              "options": {
+                "deniedGlobals": {
+                  "window": "Web global; inject it through an adapter.",
+                  "document": "Web global; inject it through an adapter.",
+                  "navigator": "Web global; inject it through an adapter.",
+                  "location": "Web global; inject it through an adapter.",
+                  "self": "Web/worker global; inject it through an adapter.",
+                  "requestAnimationFrame": "Scheduling belongs to the platform; inject it.",
+                  "cancelAnimationFrame": "Scheduling belongs to the platform; inject it.",
+                  "process": "Node global; inject it through an adapter.",
+                  "Buffer": "Node global; use Uint8Array.",
+                  /**
+                   * @note - this item is intended to block the use of globalThis.document or other
+                   * similar platform globals.
+                   *
+                   * This may be too strict and may block legitimate use cases. So this may require
+                   * being removed or refined later on.
+                   */
+                  "globalThis": "Reaches platform globals indirectly; inject what you need."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

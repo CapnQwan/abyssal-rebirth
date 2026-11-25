@@ -1,1 +1,4 @@
-{ "extends": "@cult-frog/tooling/tsconfig/base.json", "include": ["src", "vitest.config.ts"] }
+{
+  "files": [],
+  "references": [{ "path": "./packages/core" }, { "path": "./packages/shared" }]
+}
