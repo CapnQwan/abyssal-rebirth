@@ -19,8 +19,10 @@
     "src",
     "dist",
     "!dist/.tsbuildinfo",
-    "!src/**/__tests__",
-    "!dist/**/__tests__"
+    "!src/**/_tests",
+    "!dist/**/_tests",
+    "!src/**/*.test.ts",
+    "!dist/**/*.test.*"
   ],
   "sideEffects": false,
   "publishConfig": {
