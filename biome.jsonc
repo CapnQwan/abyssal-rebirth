@@ -4,7 +4,14 @@
     "rules": {
       "style": {
         // Repo-wide: forces `fs` → `node:fs`, so the node:* ban below can't be dodged.
-        "useNodejsImportProtocol": "error"
+        "useNodejsImportProtocol": "error",
+        "useConsistentMemberAccessibility": {
+          "level": "error",
+          "options": { "accessibility": "explicit" }
+        }
+      },
+      "nursery": {
+        "useExplicitType": "error"
       }
     }
   },
